@@ -9,7 +9,9 @@ BODY {
 
 
 DIV.header {
-	background: url(images/verticallines.png);
+	background: rgb(255,255,255);
+	margin: 0;
+	padding: 0;
 	}
 
 H1 {
@@ -66,21 +68,13 @@ DIV.story P {
 	line-height: 25px;
 	}
 
-H2:first-letter {
-	font-size: 300%; 
-	float:left;
-	line-height: 35px;
-	color: rgb(121,0,0);
-	background: rgb(255,255,255);
-	}
-
 H2 A:hover {
 	text-decoration: none;
 	}
 	
 H2 {
 	font-family: Georgia;
-	font-size: 20px;
+	font-size: 25px;
 	color: rgb(0,74,128);
 	font-weight: normal;
 	text-transform: uppercase;
@@ -106,7 +100,7 @@ H2 span {
 	
 P.buttons, DIV.pagination {
 	font-family: Georgia;
-	font-size: 25px;
+	font-size: 20px;
 	color: rgb(121,0,0);
 	text-transform: uppercase;
 	margin-left: auto;
