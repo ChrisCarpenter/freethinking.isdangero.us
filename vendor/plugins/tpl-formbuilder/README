@@ -1,0 +1,89 @@
+= TemplatedFormBuilder for Rails
+
+This plugin provides a FormBuilder for Rails which allows you to specify the appearance of form helpers through partials. Also, it creates instant label tags just for you!
+
+== Installation
+
+At the moment, the TemplatedFormBuilder plugin can only be obtained from SVN. From your application root:
+
++Rails Edge+:: script/plugin install svn://rubyforge.org/var/svn/tpl-formbuilder/trunk
++Rails 1.2+::  script/plugin install svn://rubyforge.org/var/svn/tpl-formbuilder/tags/rails-1.2
+
+However, you might consider using Piston[http://piston.rubyforge.org/] to manage your plugins:
+
+  piston import svn://rubyforge.org/var/svn/tpl-formbuilder/trunk vendor/plugins/templated_form_builder
+
+== Usage
+
+=== Getting Started
+
+Some Rails form helpers (those yielding a block, e.g. <code>form_for</code>) accept a <code>:builder</code> option to supply a custom FormBuilder which is used to render the form elements. For a basic example of how this works, read the documentation on <code>form_for</code>: http://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html#M000494
+
+TemplatedFormBuilder renders form elements based on regular partial templates residing in <code>app/views/forms</code>. To install some sane defaults, you may want to execute:
+
+  rake tfb:install
+
+In order to use TemplatedFormBuilder in your views, you'd do this:
+
+  form_for :post, :builder => TemplatedFormBuilder do |form|
+
+This plugin, however, comes with a handy shortcut (which will eventually be refactored into a separate plugin so you can define your own), allowing you to use:
+
+  <% tpl_form_for :post do |form| %>
+
+Within the block, you can go ahead and throw together your form as usual:
+
+  <%= form.text_field :title %>
+
+TemplatedFormBuilder will now look for <code>views/forms/_text_field.rhtml</code> (or whatever other template handlers you happen to have registered) and fall back to <code>views/forms/_element.rhtml</code> if it couldn't be found. This simple mechanism allows you to create specialized templates for the different form elements based on their types.
+
+As a bonus, form element helpers accept an additional <code>:label</code> option. TemplatedFormBuilder wraps this into a ready to use label element. With the default templates shipping with the plugin, calling this:
+
+  <%= form.text_field :title, :label => 'Title' %>
+
+Would output:
+
+  <label for="post_title"><br />
+  <input type="text" name="post[title]" id="post_title" />
+
+Additionally you can wrap any form elements with the <code>section</code> method. TemplatedFormBuilder would defer the render of the section to the template you declare via <code>:partial</code> option, fallbacking to <code>views/forms/_section.rhtml</code>.
+
+  <% form.section do %>
+     <%= form.text_field :title %>
+     <%= form.text_field :address %>
+     <%= form.text_field :phone %>
+     ...
+  <% end %>
+
+or...
+  <% form.section "Contact Info" do %>
+
+or even ...
+  <% form.section "Contact Info", :partial => "contact" do %>
+
+=== Customizing Your Form Templates
+
+As mentioned above, form templates reside in <code>app/views/forms</code>. TemplatedFormBuilder passes three local variables to the element templates:
+
++element+:: the form element in question as it is rendered by Rails' default form helpers
++label+:: a ready to use label element (i.e. the <code>for</code> attribute is correctly set)
++errors+:: validation errors for this element, if any (*note*: This local will be always an Array, even if there is only one error or no error at all.)
+
+In the case of section templates you'll gain access to two locals:
+
++section_label+:: the string you used to name the section (defaults to "Section").
++section_contents+:: the rendered elements inside the section.
+
+
+== To Do
+
+* incorporate more form helpers
+* write tests
+
+== Bugs
+
+If you find any bugs, please report them on RubyForge: http://rubyforge.org/tracker/?group_id=2889
+
+== License
+
+The TemplatedFormBuilder plugin is copyright 2007 by Moritz Heidkamp and released to the public under the terms of the MIT license (see link:files/LICENSE.html).

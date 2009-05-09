@@ -1,0 +1,7 @@
+<% content_for :title do %>Archives<% end %>
+
+<%= render :partial => 'post', :collection => @posts, :locals => {:truncate_body => true} %>
+
+<% content_for :footer do %>
+  <%= will_paginate @posts %>
+<% end %>

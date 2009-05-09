@@ -1,0 +1,110 @@
+body {
+  font-family: Helvetica;
+  padding: 0;
+  margin: 0;
+  background: #eee; }
+
+#header {
+  background: black;
+  color: white; }
+  #header h1 {
+    margin: 0; }
+  #header #navigation {
+    margin-left: 0;
+    padding-left: 0; }
+    #header #navigation >li {
+      display: block;
+      float: left;
+      background: white;
+      color: black; }
+      #header #navigation >li h2 {
+        margin: 0;
+        font-size: 18px; }
+        #header #navigation >li h2 >a {
+          display: block;
+          padding: 4px 8px;
+          border: 1px solid white;
+          border-bottom: 1px solid black;
+          background: black;
+          color: white;
+          text-decoration: none; }
+        #header #navigation >li h2 >a:hover {
+          background: white;
+          color: black;
+          border-color: black;
+          border-top-color: white; }
+      #header #navigation >li ul {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 84px;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        background: white; }
+        #header #navigation >li ul li {
+          display: block;
+          float: left; }
+          #header #navigation >li ul li h3 {
+            margin: 0;
+            font-size: 14px; }
+    #header #navigation >li.selected h2>a {
+      background: white;
+      color: black;
+      border-bottom-color: white; }
+    #header #navigation >li.selected h2>a:hover {
+      border: 1px solid white; }
+    #header #navigation >li.selected ul {
+      display: block;
+      padding: 6px 0; }
+      #header #navigation >li.selected ul li h3>a {
+        color: black;
+        display: block;
+        margin: 0 4px;
+        padding: 4px;
+        text-decoration: none; }
+      #header #navigation >li.selected ul li.selected h3>a, #header #navigation >li.selected ul h3>a:hover {
+        background: #eee;
+        text-shadow: #666 0 1px 2px; }
+
+#body {
+  margin-top: 35px;
+  padding: 20px 10px;
+  background: url('/images/styles/admin/drop_shadow.png') repeat-x #eee; }
+  #body table.index {
+    background: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 750px;
+    margin: 1em auto; }
+    #body table.index tr:first-child th:first-child {
+      border-left: 1px solid black; }
+    #body table.index tr:first-child th {
+      background: black;
+      color: white;
+      border: none;
+      border-left: 1px solid white; }
+    #body table.index th, #body table.index td {
+      padding: 4px 8px;
+      border: 1px solid black;
+      text-align: left; }
+      #body table.index th form, #body table.index td form {
+        margin: 0;
+        text-align: center; }
+  #body table.form {
+    margin: 1em auto; }
+    #body table.form th {
+      vertical-align: top;
+      padding-top: 3px; }
+    #body table.form .submit_row {
+      text-align: right; }
+
+#post_title {
+  font-size: 14px;
+  font-weight: bold; }
+
+#post_body {
+  width: 750px; }
+
+.clear {
+  clear: both; }

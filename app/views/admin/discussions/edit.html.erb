@@ -1,0 +1,5 @@
+<% content_for :title do %>Edit Comment<% end %>
+
+<% tpl_form_for [:admin, @discussion] do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f, :discussion => @discussion} %>
+<% end %>

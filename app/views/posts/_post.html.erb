@@ -1,0 +1,24 @@
+<% truncate_body ||= false %>
+
+<div class="story">
+  <h2>
+    <%= link_to h(post.title), post %>
+    <span>
+      <%= post.created_at.strftime('%B %d, %Y') %> -
+      <%= link_to pluralize(post.discussions.count, 'Comment'), post_path(post, :anchor => 'comments') %> -
+      <% post.tags.each do |tag| %>
+        <%= link_to h(tag.name), :controller => :posts, :action => :tag, :id => tag.name %>
+      <% end %>
+    </span>
+  </h2>
+  <% if truncate_body %>
+    <%= RedCloth.new(truncate(post.body, 1200)).to_html %>
+    <% if post.body.length > 1200 %>
+      <p class="more"><%= link_to 'Read more&hellip;', post %></p>
+    <% end %>
+  <% else %>
+    <%= RedCloth.new(post.body).to_html %>
+  <% end %>
+  <p class="comments">
+    <%= link_to 'Wax poetic', post_url(post, :anchor => 'comments') %>
+</div>

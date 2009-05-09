@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Code.IsDangero.us Admin: <%= yield :title %></title>
+	<% require_stylesheet 'global' %>
+	<% require_stylesheet 'admin' %>
+	<%= render :partial => 'layouts/header_tags' %>
+</head>
+
+<body>
+  <div id="header">
+    <h1>Code.IsDangero.us Admin: <%= yield :title %></h1>
+    <%= render :partial => 'layouts/admin_nav' %>
+    <div id="bg_blocker"></div>
+  </div>
+  
+  <div id="body">
+    <%= yield %>
+  </div>
+</body>
+</html>

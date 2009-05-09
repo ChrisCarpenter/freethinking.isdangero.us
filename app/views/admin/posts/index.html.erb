@@ -1,0 +1,22 @@
+<% content_for :title do %>Posts Index<% end %>
+
+<table class="index">
+  <tr>
+    <th>Title</th>
+    <th>Created</th>
+    <th>Updated</th>
+    <th>&nbsp;</th>
+  </tr>
+  <% @posts.each do |post| %>
+    <tr>
+      <th><%= link_to h(post.title), edit_polymorphic_path([:admin, post]) %></th>
+      <td><%= relative_date(post.created_at).capitalize %></td>
+      <td><%= relative_date(post.updated_at).capitalize %></td>
+      <td><%= button_to 'Delete', [:admin, post], :method => :delete, :confirm => "Are you sure you want to delete &ldquo;#{h(post.title)}&rdquo;?" %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="center">
+  <%= will_paginate @posts %>
+</div>

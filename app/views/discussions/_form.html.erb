@@ -1,0 +1,8 @@
+<%= f.text_field :name %>
+<%= f.text_field :email, :description => 'Your email will be kept safe and will never be publicly displayed.' %>
+<%= f.text_field :url, :label => 'URL' %>
+<%= f.text_area :body, :label => 'Comment' %>
+<%= f.hidden_field :post_id %>
+<%= hidden_field_tag '_redirect_on[success]', post_path(discussion.post) %>
+<%= hidden_field_tag '_flash[success]', 'Thank you!  Your thoughts have been published.' %>
+<%= f.submit 'Wax Poetic' %>

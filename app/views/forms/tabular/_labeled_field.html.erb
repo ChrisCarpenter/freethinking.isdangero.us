@@ -1,0 +1,11 @@
+<% description ||= false %>
+<tr<%= errors.size > 0 ? ' class="has_errors"' : '' %>>
+	<th><%= label %></th>
+	<td>
+		<%= yield %>
+		<% if description %>
+		  <p class="description"><%= description %></p>
+		<% end %>
+		<%= render :partial => "forms/#{type}/errors", :locals => local_assigns %>
+	</td>
+</tr>

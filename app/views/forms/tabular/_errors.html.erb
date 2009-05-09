@@ -1,0 +1,9 @@
+<% if errors.size > 1 %>
+	<ul class="error">
+		<% errors.each do |error| %>
+			<li><%= error %></li>
+		<% end %>
+	</ul>
+<% else %>
+	<p class="error"><%= errors[0] %></p>
+<% end %>

@@ -1,0 +1,11 @@
+<% require_javascript 'admin_navigation' %>
+
+<ul id="navigation">
+  <% navigation_item('Posts', admin_posts_path, :selected_if => Proc.new { params[:controller] == 'admin/posts' }) do %>
+    <%= navigation_item 'Index', admin_posts_path %>
+    <%= navigation_item 'New Post', new_admin_post_path %>
+  <% end %>
+  <% navigation_item('Discussion', admin_discussions_path, :selected_if => Proc.new { params[:controller] == 'admin/discussions' }) do %><% end %>
+</ul>
+
+<div class="clear"></div>

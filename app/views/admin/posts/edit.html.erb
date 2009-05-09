@@ -1,0 +1,3 @@
+<% content_for :title do %>Edit &ldquo;<%=h @post.title %>&rdquo;<% end %>
+
+<%= render :partial => 'form', :locals => { :post => @post } %>

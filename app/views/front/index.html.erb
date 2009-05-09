@@ -1,0 +1,7 @@
+<% content_for :title do %><% end %>
+
+<%= render :partial => @posts %>
+
+<% content_for :footer do %>
+  <p class="buttons"><%= link_to 'Furthermore', posts_path %></p>
+<% end %>

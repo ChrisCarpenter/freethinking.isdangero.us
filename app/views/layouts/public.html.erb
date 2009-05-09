@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>freethinking.isdangero.us<%= yield :title %></title>
+	
+	<%= auto_discovery_link_tag :atom, :controller => :posts, :action => :index, :format => :atom %>
+	
+	<% require_stylesheet 'global' %>
+	<% require_stylesheet 'public' %>
+	<%= render :partial => 'layouts/header_tags' %>
+</head>
+
+<body>
+  <div class="header">
+    <a href="<%= url_for '/' %>"><h1>
+      <span>freethinking.isdangero.us</span>
+    </h1></a>
+  </div>
+  <div class="dots">
+    <div class="copy">
+      <%= yield %>
+      <%= yield :footer %>
+    </div>
+  </div>
+  <p class="copyright">
+    © 2008 <a href="mailto:chriswcarpenter@gmail.com">Christopher William Carpenter</a> |
+    <%= link_to 'Atom Feed', :controller => :posts, :action => :index, :format => :atom %>
+  </p>
+</body>
+</html>

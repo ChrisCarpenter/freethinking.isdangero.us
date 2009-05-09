@@ -1,0 +1,24 @@
+<%
+options = [
+	['✭ - Poor', 1],
+	['✭✭ - Mediocre', 3],
+	['✭✭✭ - Worthwhile', 5],
+	['✭✭✭✭ - Good!', 7],
+	['✭✭✭✭✭ - Excellent!', 9]
+]
+ie_options = [
+	['1 star - Poor', 1],
+	['2 stars - Mediocre', 3],
+	['3 stars - Worthwhile', 5],
+	['4 stars - Good!', 7],
+	['5 stars - Excellent!', 9]
+]
+%>
+<% render :layout => "forms/#{type}/labeled_field", :locals => local_assigns do %>
+	<!--[if !IE]><!-->
+		<%= select(object_name, method, options, :selected => eval("object.#{method}")) %>
+	<!--<![endif]-->
+	<!--[if IE]>
+		<%= select(object_name, method, ie_options, :selected => eval("object.#{method}")) %>
+	<![endif]-->
+<% end %>

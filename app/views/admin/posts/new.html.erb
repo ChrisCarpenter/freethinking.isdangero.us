@@ -1,0 +1,5 @@
+<% require_javascript 'admin.posts.new.js' %>
+
+<% content_for :title do %>New Post<% end %>
+
+<%= render :partial => 'form', :locals => {:post => @post} %>

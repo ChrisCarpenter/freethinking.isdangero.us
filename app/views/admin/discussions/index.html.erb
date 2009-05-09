@@ -1,0 +1,36 @@
+<% content_for :title do %>Discussions<% end %>
+
+<% content_for :title do %>Posts Index<% end %>
+
+<table class="index">
+  <tr>
+    <th>Comment</th>
+    <th>Author</th>
+    <th>Created</th>
+    <th>&nbsp;</th>
+  </tr>
+  <% @discussions.each do |discussion| %>
+    <tr>
+      <td><%= RedCloth.new(discussion.body).to_html %></td>
+      <td>
+        <strong>
+          <% unless discussion.url.nil? or discussion.url.blank? %>
+            <%= link_to h(discussion.name), h(discussion.url) %>
+          <% else %>
+            <%=h comment.name %>
+          <% end %>
+        </strong><br/>
+        <%= link_to h(discussion.email), "mailto:#{h(discussion.email)}?subject=Re: #{h(discussion.post.title)}" %>
+      </td>
+      <td><%= relative_date(discussion.created_at).capitalize %></td>
+      <td>
+        <%= link_to 'Edit', edit_polymorphic_path([:admin, discussion]) %><br/>
+        <%= button_to 'Delete', [:admin, discussion], :method => :delete, :confirm => "Are you sure you want to delete #{h(discussion.name)}'s comment?" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="center">
+  <%= will_paginate @discussions %>
+</div>

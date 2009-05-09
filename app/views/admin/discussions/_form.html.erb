@@ -1,0 +1,7 @@
+<%= f.text_field :name %>
+<%= f.text_field :email %>
+<%= f.text_field :url, :label => 'URL' %>
+<%= f.text_area :body, :label => 'Comment' %>
+<%= f.hidden_field :post_id %>
+<%= hidden_field_tag '_redirect_on[success]', admin_discussions_path %>
+<%= f.submit 'Save' %>

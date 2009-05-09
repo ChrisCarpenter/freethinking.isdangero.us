@@ -1,0 +1,15 @@
+<% content_for :title do %>New Comment<% end %>
+
+<h2>New Comment</h2>
+
+<p class="flash error">
+  Your comment couldn't be posted.  Note that all fields except <em>URL</em> are required.
+</p>
+
+<p>The Web is collaborative.  Isn't it great?</p>
+
+<p><%= link_to 'Textile', 'http://www.textism.com/tools/textile/' %> is allowed.  Be polite.  Be rude.  I don't really give a fuck.</p>
+
+<% tpl_form_for @discussion, :action => discussions_path do |f| %>
+  <%= render :partial => 'discussions/form', :locals => {:f => f, :discussion => @discussion} %>
+<% end %>

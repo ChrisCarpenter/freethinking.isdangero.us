@@ -1,0 +1,7 @@
+---
+port: 8004
+pid_file: '/tmp/freethinking_isdangero_us-production.pid'
+servers: 4
+address: 127.0.0.1
+environment: production
+

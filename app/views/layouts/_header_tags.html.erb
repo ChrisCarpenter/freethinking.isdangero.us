@@ -1,0 +1,7 @@
+<% if @required_stylesheets and @required_stylesheets.size > 0 %>
+  <%= stylesheet_link_tag *@required_stylesheets %>
+<% end %>
+<% if @required_javascripts and @required_javascripts.size > 0 %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag *@required_javascripts %>
+<% end %>
