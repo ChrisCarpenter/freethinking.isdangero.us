@@ -171,3 +171,21 @@ H3 {
 	background-repeat: no-repeat;
 	background-position: right top;
 }
+
+H4 {
+	font-family: Georgia;
+	font-size: 15px;
+	color: rgb(0,74,128);
+	font-weight: normal;
+	text-transform: uppercase;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	margin-bottom: 10px;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+DIV.discussion {
+	background: rgb(220,220,220);
+	padding: 5px;
+}

@@ -1,12 +1,12 @@
 <div class="discussion">
-  <h3<%= object.email == 'chriswcarpenter@gmail.com' ? ' class="me"' : '' %>>
+  <h4<%= object.email == 'chriswcarpenter@gmail.com' ? ' class="me"' : '' %>>
     <% unless object.url.blank? or object.url.nil? %>
       <%= link_to h(object.name), h(object.url) %>
     <% else %>
       <%=h object.name %>
     <% end %>
     said:
-  </h3>
+  </h4>
 </div>
 
 <%= RedCloth.new(object.body).to_html %>
