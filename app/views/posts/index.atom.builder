@@ -6,7 +6,7 @@ atom_feed do |feed|
       entry.title(h(post.title))
       entry.content(RedCloth.new(post.body).to_html, :type => 'html')
       entry.author do |author|
-        author.name('Chris Vincent')
+        author.name('Chris Carpenter')
       end
     end
   end

@@ -158,3 +158,16 @@ P.comments:hover A {
 P.comments:hover A:hover {
 	text-decoration: none;
 	}
+	
+H3 {
+	font-family: Georgia;
+	font-size: 20px;
+	color: rgb(0,74,128);
+	font-weight: normal;
+	text-transform: uppercase;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	margin-bottom: 10px;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
