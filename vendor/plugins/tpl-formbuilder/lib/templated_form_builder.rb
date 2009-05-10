@@ -65,7 +65,7 @@ class TemplatedFormBuilder < ActionView::Helpers::FormBuilder
     end
 
     def extract_label(method, options)
-			options[:label] = "#{options[:label]}:" unless options[:label].nil?
+			options[:label] = "#{options[:label]}" unless options[:label].nil?
       options.delete(:label) do
         method.to_s.humanize
       end
