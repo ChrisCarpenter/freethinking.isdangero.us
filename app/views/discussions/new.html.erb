@@ -2,7 +2,7 @@
 
 <h3>New Comment</h3>
 <div class="discussion">
-<p class="flash error">
+<p>
   Your comment couldn't be posted.  Note that all fields except <em>URL</em> are required.
 </p>
 
@@ -10,3 +10,5 @@
 <% tpl_form_for @discussion, :action => discussions_path do |f| %>
   <%= render :partial => 'discussions/form', :locals => {:f => f, :discussion => @discussion} %>
 <% end %>
+
+</div>
