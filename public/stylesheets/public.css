@@ -201,7 +201,7 @@ DIV.discussion P {
 
 table.form {
   	font-family: Georgia;
-	font-size: 10px;
+	font-size: 13px;
 	color: rgb(0,74,128);
 	font-weight: normal;
 	text-transform: uppercase;
@@ -212,15 +212,20 @@ table.form {
     padding-top: 4px;
     vertical-align: top;
     text-align: right; }
+
   table.form textarea {
     padding-top: 2px;
     width: 100%; }
+
   table.form input.submit {
     float: right;
     border: 1px outset #aaa;
     background: #ddd; }
+
   table.form p.description {
-    color: #666;
+	font-family: "Lucidia Grande", Helvetica, Arial;
+    color: rgb(121,0,0);
     margin: .5em 0; }
+
   table.form p.error, table.form ul.error {
     color: rgb(150,0,0); }
