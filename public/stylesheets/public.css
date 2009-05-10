@@ -191,6 +191,10 @@ H4 a:hover {
 
 DIV.discussion {
 	background: rgb(245,245,245);
-	padding: 0px;
+	padding: 5px;
 	margin: 0px;
+}
+
+DIV.discussion P {
+	padding-left: 5px;
 }
