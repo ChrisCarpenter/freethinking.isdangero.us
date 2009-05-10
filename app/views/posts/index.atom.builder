@@ -1,5 +1,5 @@
 atom_feed do |feed|
-  feed.title('code.isdangero.us')
+  feed.title('freethinking.isdangero.us')
   feed.updated((@posts.first.created_at))
   for post in @posts
     feed.entry(post) do |entry|
