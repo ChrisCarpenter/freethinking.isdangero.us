@@ -178,6 +178,8 @@ H4 {
 	color: rgb(0,74,128);
 	font-weight: normal;
 	text-transform: uppercase;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 	background-repeat: no-repeat;
 	background-position: right top;
 }
