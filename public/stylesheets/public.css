@@ -224,7 +224,8 @@ table.form {
 
   table.form p.description {
 	font-family: "Lucidia Grande", Helvetica, Arial;
-    color: rgb(121,0,0);
+	text-transform: lowercase;
+    color: rgb(50,50,50);
     margin: .5em 0; }
 
   table.form p.error, table.form ul.error {
