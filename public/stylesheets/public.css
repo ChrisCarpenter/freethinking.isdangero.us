@@ -185,7 +185,7 @@ H4 {
 	background-position: right top;
 }
 
-H4 a:hover {
+H4 A {
 	color: rgb(121,0,0);
 }
 
@@ -197,4 +197,5 @@ DIV.discussion {
 
 DIV.discussion P {
 	padding-left: 5px;
+	margin-top: 0px;
 }

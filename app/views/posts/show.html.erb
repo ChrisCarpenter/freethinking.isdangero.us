@@ -8,17 +8,18 @@
   <% if @post.discussions.size > 0 %>
     <%= render :partial => 'discussions/discussion', :collection => @post.discussions %>
   <% else %>
-    <p>Nobody has said anything yet.  Pretty depressing.  Please comment, if only out of pity.</p>
+<div class="discussion">Nobody has said anything yet.  Pretty depressing.  Please comment, if only out of pity.</div>
   <% end %>
 </div>
 
 <div class="story">
   <h3>Wax poetic</h3>
-
+<div class="discussion">
   <p>Share your thoughts on this entry.  <%= link_to 'Textile', 'http://www.textism.com/tools/textile/' %> is allowed.</p>
 
   <% tpl_form_for (discussion = @post.discussions.build), :action => discussions_path do |f| %>
     <%= render :partial => 'discussions/form', :locals => {:f => f, :discussion => discussion} %>
     <% # TODO: add "remember me" checkbox %>
   <% end %>
+</div>
 </div>
