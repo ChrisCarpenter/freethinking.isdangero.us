@@ -12,5 +12,5 @@ production:
   adapter: mysql
   database: freethinking_blog_production
   username: root
-  password:jackdog05
+  password: jackdog05
   timeout: 5000
