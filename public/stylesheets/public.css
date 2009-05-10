@@ -200,6 +200,11 @@ DIV.discussion P {
 }
 
 table.form {
+  	font-family: Georgia;
+	font-size: 10px;
+	color: rgb(0,74,128);
+	font-weight: normal;
+	text-transform: uppercase;
   padding: 0px;
   width: 100%; }
 
