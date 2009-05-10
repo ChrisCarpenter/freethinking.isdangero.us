@@ -1,6 +1,6 @@
 development:
-  adapter: mysql
-  database: freethinking_blog_development
+  adapter: sqlite3
+  database: db/development.sqlite3
   timeout: 5000
 
 test:
@@ -12,5 +12,5 @@ production:
   adapter: mysql
   database: freethinking_blog_production
   username: root
-  password: jackdog05
+  password: 3rahuza
   timeout: 5000

@@ -12,9 +12,9 @@
 ActiveRecord::Schema.define(:version => 4) do
 
   create_table "discussions", :force => true do |t|
-    t.integer  "post_id",                    :null => false
-    t.string   "name",       :default => "", :null => false
-    t.string   "email",      :default => "", :null => false
+    t.integer  "post_id",    :null => false
+    t.string   "name",       :null => false
+    t.string   "email",      :null => false
     t.string   "url"
     t.text     "body"
     t.datetime "created_at"
@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(:version => 4) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
   add_index "taggings", ["taggable_id", "taggable_type"], :name => "index_taggings_on_taggable_id_and_taggable_type"
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
 
   create_table "tags", :force => true do |t|
     t.string "name"
