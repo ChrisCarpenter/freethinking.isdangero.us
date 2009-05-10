@@ -3,19 +3,19 @@
 <%= render :partial => @post %>
 
 <div class="story">
-  <h2 id="comments">Comments<span>&nbsp;</span></h2>
+  <h3 id="comments">Comments</h3>
 
   <% if @post.discussions.size > 0 %>
     <%= render :partial => 'discussions/discussion', :collection => @post.discussions %>
   <% else %>
-    <p>Nobody has said anything yet.</p>
+    <p>Nobody has said anything yet.  Pretty depressing.  Please comment, if only out of pity.</p>
   <% end %>
 </div>
 
 <div class="story">
-  <h2>Wax poetic<span>&nbsp;</span></h2>
+  <h3>Wax poetic</h3>
 
-  <p><%= link_to 'Textile', 'http://www.textism.com/tools/textile/' %> is allowed.</p>
+  <p>Share your thoughts on this entry.  <%= link_to 'Textile', 'http://www.textism.com/tools/textile/' %> is allowed.</p>
 
   <% tpl_form_for (discussion = @post.discussions.build), :action => discussions_path do |f| %>
     <%= render :partial => 'discussions/form', :locals => {:f => f, :discussion => discussion} %>
