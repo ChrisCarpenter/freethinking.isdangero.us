@@ -20,5 +20,5 @@
     <%= RedCloth.new(post.body).to_html %>
   <% end %>
   <p class="comments">
-    <%= link_to 'Wax poetic', post_url(post, :anchor => 'comments') %>
+    <%= link_to 'Read more', post_url(post, :anchor => 'comments') %>
 </div>
