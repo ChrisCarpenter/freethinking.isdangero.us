@@ -200,10 +200,9 @@ DIV.discussion P {
 }
 
 table.form {
-  background: #eee;
-  border: 1px solid #ccc;
-  padding: 10px;
+  padding: 0px;
   width: 100%; }
+
   table.form th {
     padding-top: 4px;
     vertical-align: top;
