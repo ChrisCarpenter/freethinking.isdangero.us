@@ -219,8 +219,13 @@ table.form {
 
   table.form input.submit {
     float: right;
-    border: 1px outset #aaa;
-    background: #ddd; }
+    border: none;
+    font-family: Georgia;
+	font-size: 10=2px;
+	color: rgb(255,255,255);
+	font-weight: normal;
+	text-transform: uppercase;
+    background: rgb(121,0,0); }
 
   table.form p.description {
 	font-family: "Lucidia Grande", Helvetica, Arial;
