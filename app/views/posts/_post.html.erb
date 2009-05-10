@@ -4,7 +4,7 @@
   <h2>
     <%= link_to h(post.title), post %>
     <span>
-      <%= post.created_at.strftime('%d %B %Y') %> Filed Under:
+      <%= post.created_at.strftime('%d %B %Y') %>
       <% post.tags.each do |tag| %>
         <%= link_to h(tag.name), :controller => :posts, :action => :tag, :id => tag.name %>
       <% end %>
