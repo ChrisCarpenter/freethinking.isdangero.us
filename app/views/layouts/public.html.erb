@@ -2,7 +2,7 @@
 <head>
 	<title>freethinking.isdangero.us<%= yield :title %></title>
 	
-	<%= auto_discovery_link_tag :atom, 'http://feeds2.feedburner.com/freethinkingisdangerous' %>
+	<%= auto_discovery_link_tag :atom, 'http://feeds2.feedburner.com/freethinkingisdangerous?format=xml' %>
 	
 	<% require_stylesheet 'global' %>
 	<% require_stylesheet 'public' %>
@@ -26,7 +26,7 @@
   </div>
   <p class="copyright">
     &#169; 2009 <a href="mailto:chriswcarpenter@gmail.com">Christopher Carpenter</a> |
-    <%= link_to 'Feed Me', 'http://feeds2.feedburner.com/freethinkingisdangerous' %>
+    <%= link_to 'Feed Me', 'http://feeds2.feedburner.com/freethinkingisdangerous?format=xml' %>
   </p>
 
 	
